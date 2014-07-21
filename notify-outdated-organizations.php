@@ -199,7 +199,7 @@ class NotifyOutdatedOrganizations {
 
 		foreach ($organizations as $organization) {
 
-			$email = get_post_meta($organization->ID, '_OrganizerEmail', true);
+			$email = get_post_meta($organization->ID, 'email', true);
 
 			$url = get_permalink($organization->ID);
 

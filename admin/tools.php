@@ -78,7 +78,7 @@
 				</td>
 
 				<td>
-					<span><?php _e(get_post_meta($organization->ID, '_OrganizerEmail', true ), self::$text_domain); ?></span>
+					<span><?php _e(get_post_meta($organization->ID, 'email', true ), self::$text_domain); ?></span>
 				</td>
 
 				<td>
