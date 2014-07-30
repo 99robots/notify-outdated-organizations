@@ -209,8 +209,10 @@ class NotifyOutdatedOrganizations {
 			$message .= "\r\n\r\n";
 	    	$message .= "View it: $url";
 
+	    	$headers = 'Cc: cainformation@greenwichlibrary.org' . "\r\n";
+
 			if (isset($email) && $email != '') {
-				wp_mail($email, $subject, $message);
+				wp_mail($email, $subject, $message, $headers);
 			}
 		}
 	}
