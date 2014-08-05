@@ -205,23 +205,23 @@ class NotifyOutdatedOrganizations {
 
 			$submit_form = get_site_url() . '/submitedit-an-organization/';
 
-			$subject = "Annual Update is now overdue for $organization->post_title";
+			$subject = "Annual Update is now due for $organization->post_title";
 
 			$message = "It is time to update your Complimentary Record at communityanswers.org" . "\r\n\r\n";
 
 			$message .= "150,000 hits projected for 2015" . "\r\n\r\n";
 
-			$message .= "Community Answers is a non-profit, information and referral service located in the Greenwich Library. For almost 50 years, Community Answers has been the go-to source for everything Greenwich. Our website www.communityanswers.org has been developed by Greenwich Residents for Greenwich. We are enjoying record site traffic." . "\r\n\r\n";
+			$message .= "Community Answers is a free, non-profit, information andreferral service located in the Greenwich Library. For almost 50 years, Community Answers has been the go-to source for everything Greenwich.  Our dynamic website gives you direct access to Greenwich Residents." . "\r\n\r\n";
 
-			$message .= "Kindly check your record: $organization->post_title" . "\r\n";
+			$message .= "It is time to check and update your Organization’s complimentary listing at communityanswers.org." . "\r\n\r\n";
 
-			$message .= "To make changes please go our online submission form $submit_form " . " " . "\r\n";
+			$message .= " - View your record - $url" . " " . "\r\n";
 
-			$message .= "View the organization $url" . " ";
+			$message .= " - To make changes please go our online submission form  - $submit_form " . " ";
 
-			$message .= "\r\n\r\n" . "We pride ourselves on keeping our information relevant and accurate, and we thank you for your assistance. If you have any questions, please contact Janet Santen at cainformation@greenwichlibrary.org or directly at 203-622-7981";
+			$message .= "\r\n\r\n" . "Community Answers strives to keep our information relevantand accurate, and we thank you for your assistance. If you have any questions, please contact us at cainformation@greenwichlibrary.org or call 203-622-7981.";
 
-	    	$headers[] = 'From: Janet Santen <cainformation@greenwichlibrary.org>';
+	    	$headers[] = 'From: Information Manager <cainformation@greenwichlibrary.org>';
 			$headers[] = 'Cc: Janet Santen <cainformation@greenwichlibrary.org>';
 
 			if (isset($email) && $email != '') {
