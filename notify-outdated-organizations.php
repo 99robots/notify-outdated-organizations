@@ -203,29 +203,30 @@ class NotifyOutdatedOrganizations {
 
 			$url = get_permalink($organization->ID);
 
+			$submit_form = get_site_url() . '/submitedit-an-organization/';
+
 			$subject = "Annual Update is now overdue for $organization->post_title";
 
-			$message = 'It is time to update your Complimentary Record at
-communityanswers.org\r\n';
+			$message = "It is time to update your Complimentary Record at communityanswers.org" . "\r\n\r\n";
 
-			$message .= '150,000 hits projected for 2015\r\n';
+			$message .= "150,000 hits projected for 2015" . "\r\n\r\n";
 
-			$message .= 'Community Answers is a non-profit, information and referral service located in the Greenwich Library. For almost 50 years, Community Answers has been the go-to source for everything Greenwich. Our website www.communityanswers.org has been developed by Greenwich Residents for Greenwich. We are enjoying record site traffic.\r\n';
+			$message .= "Community Answers is a non-profit, information and referral service located in the Greenwich Library. For almost 50 years, Community Answers has been the go-to source for everything Greenwich. Our website www.communityanswers.org has been developed by Greenwich Residents for Greenwich. We are enjoying record site traffic." . "\r\n\r\n";
 
-			$message .= "Kindly check your record: $organization->post_title\r\n";
+			$message .= "Kindly check your record: $organization->post_title" . "\r\n";
 
-			$message .= "To make changes please go our online submission form $url\r\n\r\n";
+			$message .= "To make changes please go our online submission form $submit_form " . " " . "\r\n";
 
-			$message .= 'We pride ourselves on keeping our information relevant and accurate, and we thank you for your assistance. If you have any questions, please contact Janet Santen at cainformation@greenwichlibrary.org or directly at 203-622-7981';
+			$message .= "View the organization $url" . " ";
 
-			$message = "Please update your Organization: $organization->post_title";
-			$message .= "\r\n\r\n";
-	    	$message .= "View it: $url";
+			$message .= "\r\n\r\n" . "We pride ourselves on keeping our information relevant and accurate, and we thank you for your assistance. If you have any questions, please contact Janet Santen at cainformation@greenwichlibrary.org or directly at 203-622-7981";
 
-	    	$headers = 'Cc: cainformation@greenwichlibrary.org' . "\r\n";
+	    	$headers[] = 'From: Janet Santen <cainformation@greenwichlibrary.org>';
+			$headers[] = 'Cc: Janet Santen <cainformation@greenwichlibrary.org>';
 
 			if (isset($email) && $email != '') {
-				wp_mail($email, $subject, $message, $headers);
+				$result = wp_mail($email, $subject, $message, $headers);
+				//error_log($result);
 			}
 		}
 	}

@@ -82,9 +82,14 @@
 				</td>
 
 				<td>
-					<?php foreach (get_the_terms($organization->ID, 'org_category') as $category) { ?>
-						<div><?php _e($category->name, self::$text_domain); ?></div>
-					<?php } ?>
+					<?php
+					$categories = get_the_terms($organization->ID, 'org_category');
+
+					if (isset($categories) && is_array($categories)) {
+						foreach ($categories as $category) { ?>
+							<div><?php _e($category->name, self::$text_domain); ?></div>
+					<?php }
+					} ?>
 				</td>
 
 				<td>
