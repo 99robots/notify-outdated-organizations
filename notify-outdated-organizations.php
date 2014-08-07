@@ -207,11 +207,7 @@ class NotifyOutdatedOrganizations {
 
 			$subject = "Annual Update is now due for $organization->post_title";
 
-			$message = "It is time to update your Complimentary Record at communityanswers.org" . "\r\n\r\n";
-
-			$message .= "150,000 hits projected for 2015" . "\r\n\r\n";
-
-			$message .= "Community Answers is a free, non-profit, information andreferral service located in the Greenwich Library. For almost 50 years, Community Answers has been the go-to source for everything Greenwich.  Our dynamic website gives you direct access to Greenwich Residents." . "\r\n\r\n";
+			$message = "Community Answers is a free, non-profit, information andreferral service located in the Greenwich Library. For almost 50 years, Community Answers has been the go-to source for everything Greenwich.  Our dynamic website gives you direct access to Greenwich Residents." . "\r\n\r\n";
 
 			$message .= "It is time to check and update your Organization’s complimentary listing at communityanswers.org." . "\r\n\r\n";
 
