@@ -170,8 +170,6 @@ class NotifyOutdatedOrganizations {
 				window.location = "<?php echo $_SERVER['PHP_SELF']?>?page=<?php echo self::$tools_page; ?>";
 			</script>
 			<?php
-		} else {
-			;
 		}
 
 		require('admin/tools.php');
@@ -207,7 +205,7 @@ class NotifyOutdatedOrganizations {
 
 			$subject = "Annual Update is now due for $organization->post_title";
 
-			$message = "Community Answers is a free, non-profit, information andreferral service located in the Greenwich Library. For almost 50 years, Community Answers has been the go-to source for everything Greenwich.  Our dynamic website gives you direct access to Greenwich Residents." . "\r\n\r\n";
+			$message = "Community Answers is a free, non-profit, information and referral service located in the Greenwich Library. For almost 50 years, Community Answers has been the go-to source for everything Greenwich.  Our dynamic website gives you direct access to Greenwich Residents." . "\r\n\r\n";
 
 			$message .= "It is time to check and update your Organization’s complimentary listing at communityanswers.org." . "\r\n\r\n";
 
@@ -215,7 +213,7 @@ class NotifyOutdatedOrganizations {
 
 			$message .= " - To make changes please go our online submission form  - $submit_form " . " ";
 
-			$message .= "\r\n\r\n" . "Community Answers strives to keep our information relevantand accurate, and we thank you for your assistance. If you have any questions, please contact us at cainformation@greenwichlibrary.org or call 203-622-7981.";
+			$message .= "\r\n\r\n" . "Community Answers strives to keep our information relevant and accurate, and we thank you for your assistance. If you have any questions, please contact us at cainformation@greenwichlibrary.org or call 203-622-7981.";
 
 	    	$headers[] = 'From: Information Manager <cainformation@greenwichlibrary.org>';
 			$headers[] = 'Cc: Janet Santen <cainformation@greenwichlibrary.org>';
