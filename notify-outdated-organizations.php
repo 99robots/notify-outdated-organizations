@@ -197,7 +197,29 @@ class NotifyOutdatedOrganizations {
 
 		foreach ($organizations as $organization) {
 
-			$email = get_post_meta($organization->ID, 'email', true);
+			$email = '';
+
+			// Loop through all contact emails
+
+			$count = 0;
+
+			$contact_email = get_post_meta($organization->ID, 'contacts_multi_' . $count . '_contact-email', true);
+
+			while ($count < 15) {
+
+				if ($contact_email != '') {
+					$email = $contact_email;
+					break;
+				}
+
+				$count++;
+
+				$contact_email = get_post_meta($organization->ID, 'contacts_multi_' . $count . '_contact-email', true);
+			}
+
+			if ($email == '') {
+				$email = get_post_meta($organization->ID, 'email', true);
+			}
 
 			$url = get_permalink($organization->ID);
 
